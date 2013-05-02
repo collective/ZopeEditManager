@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>helper_apps</key>
+    <dict>
+        <key>DTML Document</key>
+        <dict>
+            <key>extension</key>
+            <string>.dtml</string>
+            <key>editor</key>
+            <string>TextEdit</string>
+        </dict>
+        <key>DTML Method</key>
+        <dict>
+            <key>extension</key>
+            <string>.dtml</string>
+            <key>editor</key>
+            <string>TextEdit</string>
+        </dict>
+        <key>Script (Python)</key>
+        <dict>
+            <key>extension</key>
+            <string>.py</string>
+            <key>editor</key>
+            <string>TextEdit</string>
+        </dict>
+        <key>Page Template</key>
+        <dict>
+            <key>extension</key>
+            <string>.html</string>
+            <key>editor</key>
+            <string>TextEdit</string>
+        </dict>
+        <key>Z SQL Method</key>
+        <dict>
+            <key>extension</key>
+            <string>.sql</string>
+            <key>editor</key>
+            <string>TextEdit</string>
+        </dict>
+        <key>image/gif</key>
+        <dict>
+            <key>extension</key>
+            <string>.gif</string>
+            <key>editor</key>
+            <string>Preview</string>
+        </dict>
+        <key>image/jpeg</key>
+        <dict>
+            <key>extension</key>
+            <string>.jpg</string>
+            <key>editor</key>
+            <string>Preview</string>
+        </dict>
+        <key>image/png</key>
+        <dict>
+            <key>extension</key>
+            <string>.png</string>
+            <key>editor</key>
+            <string>Preview</string>
+        </dict>
+        <key>image/*</key>
+        <dict>
+            <key>editor</key>
+            <string>Preview</string>
+        </dict>
+        <key>text/html</key>
+        <dict>
+            <key>extension</key>
+            <string>.html</string>
+            <key>editor</key>
+            <string>TextEdit</string>
+        </dict>
+        <key>text/xml</key>
+        <dict>
+            <key>extension</key>
+            <string>.xml</string>
+            <key>editor</key>
+            <string>TextEdit</string>
+        </dict>
+        <key>text/*</key>
+        <dict>
+            <key>extension</key>
+            <string>.txt</string>
+            <key>editor</key>
+            <string>TextEdit</string>
+        </dict>
+    </dict>
+    <key>save_interval</key>
+    <real>10.0</real>
+    <key>confirm_on_finish</key>
+    <true/>
+    <key>cleanup_files</key>
+    <true/>
+    <key>use_locks</key>
+    <true/>
+    <key>always_borrow_locks</key>
+    <false/>
+    <key>version_check</key>
+    <string>0.9</string>
+</dict>
+</plist>
