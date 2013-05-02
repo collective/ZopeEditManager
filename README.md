@@ -140,7 +140,7 @@ I hope you enjoy using this software. If you have any comments,
 suggestions or would like to report a bug, send an email with 'Zem' in
 the Subject line to the author:
 
-Zachery Bir <zbir@urbanape.com>
+[Zachery Bir &lt;zbir@urbanape.com&gt;](zbir@urbanape.com)
 
 (C) 2003-2005, Zachery Bir and Zope Corporation. All rights reserved.
 
