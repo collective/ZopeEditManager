@@ -15,7 +15,7 @@ since all edits are handled through Zem.
 
 ### Installing It
 
-Drag the ZopeEditManger application to the Applications folder in your
+Drag the Zem application to the Applications folder in your
 hard drive or home directory. You can use the built-in preferences,
 one of the supplied preference files, or edit your own.
 
