@@ -55,45 +55,45 @@ corresponding key names in the Preferences plist):
 
 Cleanup Files (cleanup_files)
 
-  Whether to delete the temp files created.
+> Whether to delete the temp files created.
 
-  WARNING the temp file coming from the browser contains
-  authentication information and therefore setting this to <false/>
-  is a security risk, especially on shared machines. If set to
-  <true/>, that file is deleted at the earliest opportunity, before
-  the editor is even spawned. Set to <false /> for debugging only.
+> WARNING the temp file coming from the browser contains
+> authentication information and therefore setting this to <false/>
+> is a security risk, especially on shared machines. If set to
+> <true/>, that file is deleted at the earliest opportunity, before
+> the editor is even spawned. Set to <false /> for debugging only.
 
 Confirm on Finish (confirm_on_finish)
 
-  When you are finished locally editing a file, Zem will ask you to
-  confirm this. You can disable this behavior by unchecking this
-  button.
+> When you are finished locally editing a file, Zem will ask you to
+> confirm this. You can disable this behavior by unchecking this
+> button.
 
 Save Interval (save_interval)
 
-  The interval in seconds that the helper application checks the
-  edited file for changes.
+> The interval in seconds that the helper application checks the
+> edited file for changes.
 
 Temporary Files (temp_dir)
 
-  Path to store local copies of object data being edited. Defaults
-  to /tmp (/ private/tmp).
+> Path to store local copies of object data being edited. Defaults
+> to /tmp (/ private/tmp).
 
 #### WebDAV Prefs
 
 Use WebDAV Locks (use_locks)
 
-  Whether to use WebDAV locking. The user editing must have the
-  proper WebDAV related permissions for this to work.
+> Whether to use WebDAV locking. The user editing must have the
+> proper WebDAV related permissions for this to work.
 
 Always borrow WebDAV Locks (always_borrow_locks)
 
-  When use_locks is enabled this features suppresses warnings when
-  trying to edit an object you have already locked. When enabled,
-  external editor will always "borrow" the existing lock token
-  instead of doing the locking itself. This is useful when using
-  CMFStaging for instance. If omitted, this option defaults to
-  <false/>.
+> When use_locks is enabled this features suppresses warnings when
+> trying to edit an object you have already locked. When enabled,
+> external editor will always "borrow" the existing lock token
+> instead of doing the locking itself. This is useful when using
+> CMFStaging for instance. If omitted, this option defaults to
+> <false/>.
 
 #### Helper Apps Prefs
 
@@ -104,17 +104,17 @@ ascending or descending.
 
 Type
 
-  Either the meta_type of the Zope object, or the MIME type of the
-  file it would represent.
+> Either the meta_type of the Zope object, or the MIME type of the
+> file it would represent.
 
 Extension (extension)
 
-  The file extension to add to the content file. Allows better
-  handling of images and can improve syntax highlighting.
+> The file extension to add to the content file. Allows better
+> handling of images and can improve syntax highlighting.
 
 Editor (editor)
 
-  Application name used to invoke the editor application.
+> Application name used to invoke the editor application.
 
 ### Credits
 
