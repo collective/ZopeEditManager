@@ -1,4 +1,4 @@
-Zem
+## Zem
 
 Zem is an implementation of Casey Duncan's excellent External Editor
 for Mac OS X, providing Mac users with flexibility in their choice of
@@ -13,24 +13,24 @@ to act as the editor for a MIME type, type group, or Zope
 meta_type. And you can have as many concurrent edits as you like,
 since all edits are handled through Zem.
 
-Installing It
+### Installing It
 
 Drag the ZopeEditManger application to the Applications folder in your
 hard drive or home directory. You can use the built-in preferences,
 one of the supplied preference files, or edit your own.
 
-Using It
+### Using It
 
 As you download links from the Zope Management Interface (ZMI) or the
 Content Management Framework (CMF) or Plone, new documents will
 accumulate in the main table.
 
-As saves are made in the editor, Zem will synch those changes back to
-the server, and display the time of the last synch. To remove a
+As saves are made in the editor, Zem will sync those changes back to
+the server, and display the time of the last sync. To remove a
 document from Zem, simply select it from the table, and click the
 'Finish' button, or press the 'delete' key.
 
-Configuring your Browser
+### Configuring your Browser
 
 Currently, the only browser fully set to work with Zem is
 Mozilla. Internet Explorer supports the configuration of File Helpers,
@@ -41,17 +41,17 @@ select the Helper Applications pane from the Navigator group, and
 create a New Type called 'application/x-zope-edit', and choose Zem
 with the Application picker.
 
-Configuration
+### Configuration
 
 Zem provides a GUI Preferences panel. Just choose "Preferences..."
 from the Zem menu, or press Command-, to open the window.
 
-Options
+### Options
 
 The available options for Zem are (names in parentheses are the
 corresponding key names in the Preferences plist):
 
-Files Prefs
+#### Files Prefs
 
 Cleanup Files (cleanup_files)
 
@@ -79,7 +79,7 @@ Temporary Files (temp_dir)
     Path to store local copies of object data being edited. Defaults
     to /tmp (/ private/tmp).
 
-WebDAV Prefs
+#### WebDAV Prefs
 
 Use WebDAV Locks (use_locks)
 
@@ -95,7 +95,7 @@ Always borrow WebDAV Locks (always_borrow_locks)
     CMFStaging for instance. If omitted, this option defaults to
     <false/>.
 
-Helper Apps Prefs
+#### Helper Apps Prefs
 
 To edit an entry, simply double click on the cell, and edit. To add a
 new Helper App, click the '+' button. To remove an entry, select a
@@ -116,7 +116,7 @@ Editor (editor)
 
     Application name used to invoke the editor application.
 
-Credits
+### Credits
 
 I would like to thank the following people for their help in this
 endeavor:
@@ -134,7 +134,7 @@ endeavor:
     Crawford, Jean-Philippe Rey, Jim Allman, and Alan Runyan for using
     it and supplying valuable feedback
 
-Conclusion
+### Conclusion
 
 I hope you enjoy using this software. If you have any comments,
 suggestions or would like to report a bug, send an email with 'Zem' in
