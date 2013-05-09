@@ -1,5 +1,4 @@
-from distutils.core import setup
-import py2app
+from setuptools import setup
 
 plist = dict(
     CFBundleName = "Zem",
@@ -42,4 +41,5 @@ setup(
     app = [dict(
         script="ZemAppDelegate.py", plist=plist),
            ],
+    setup_requires = 'py2app',
     )
