@@ -22,6 +22,10 @@ plist = dict(
              CFBundleTypeRole = "Viewer",
              CFBundleTypeIconFile = "ZEMDocument.icns")])
 
+options = {
+    'iconfile': 'Resources/ZEM.icns',
+}
+
 setup(
     data_files = ["Nibs/MainMenu.nib",
                   "Nibs/Preferences.nib",
@@ -41,5 +45,6 @@ setup(
     app = [dict(
         script="ZemAppDelegate.py", plist=plist),
            ],
+    options={'py2app': options},
     setup_requires = 'py2app',
     )
