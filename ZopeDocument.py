@@ -12,6 +12,7 @@ import urllib
 from urlparse import urlparse
 from httplib import HTTPConnection, HTTPSConnection
 from tempfile import mktemp
+import hashlib
 
 # import needed classes/functions from Foundation
 from Foundation import *
@@ -85,11 +86,11 @@ class ZopeDocument:
         return self.filename
 
     def generateContentFile(self):
-        content_file = urllib.unquote('-%s%s' % (self.host, self.path))
-        content_file = content_file.replace('/',
-                                            ',').replace(':',
-                                                         ',').replace(' ',
-                                                                      '_')
+        content_file = self.metadata.get('title', self.path.split('/')[-1])
+        md5 = hashlib.md5()
+        md5.update(self.host)
+        md5.update(self.path)
+        dir_name = md5.hexdigest()
 
         extension = self.options.get('extension', None)
 
@@ -97,14 +98,15 @@ class ZopeDocument:
             content_file = content_file + extension
 
         if self.sud.stringForKey_('temp_dir'):
-            while 1:
-                temp = os.path.expanduser(self.sud.stringForKey_('temp_dir'))
-                temp = os.tempnam(temp)
-                content_file = '%s%s' % (temp, content_file)
-                if not os.path.exists(content_file):
-                    break
+            temp_dir = os.path.expanduser(self.sud.stringForKey_('temp_dir'))
         else:
-            content_file = mktemp(content_file)
+            temp_dir = tempfile.gettempdir()
+
+        path = os.path.join(temp_dir, dir_name)
+        if not os.path.exists(path):
+            os.mkdir(path, 0700)
+
+        content_file = os.path.join(path, content_file)
 
         out_f = open(content_file, 'wb')
         out_f.write(self.contents)
@@ -297,3 +299,4 @@ class ZopeDocument:
             self.unlock(interactive=0)
 
         os.remove(self.getContentFile())
+        os.rmdir(os.path.dirname(self.getContentFile()))
