@@ -6,18 +6,16 @@
 #  Copyright (c) 2004 Zope Foundation and Contributors.
 #
 
-import sys, os, re
-import urllib
-from urlparse import urlparse
-from httplib import HTTPConnection, HTTPSConnection
-from tempfile import mktemp
-import hashlib
-
-# import needed classes/functions from Foundation
-from Foundation import *  # noqa
-
-# import Nib loading functionality from AppKit
 from AppKit import *  # noqa
+from Foundation import *  # noqa
+from http.client import HTTPConnection, HTTPSConnection
+from tempfile import mktemp
+from urllib.parse import urlparse
+
+import hashlib
+import os
+import re
+import sys
 
 __version__ = "0.9"
 
@@ -63,7 +61,7 @@ class ZopeDocument:
         if self.ssl:
             # See if ssl is available
             try:
-                from socket import ssl
+                import ssl
             except ImportError:
                 fatalError(
                     "SSL support is not available on this system. "
@@ -89,8 +87,8 @@ class ZopeDocument:
     def generateContentFile(self):
         content_file = self.metadata.get("title", self.path.split("/")[-1])
         md5 = hashlib.md5()
-        md5.update(self.host)
-        md5.update(self.path)
+        md5.update(self.host.encode("utf8"))
+        md5.update(self.path.encode("utf8"))
         dir_name = md5.hexdigest()
 
         extension = self.options.get("extension", None)
@@ -105,7 +103,7 @@ class ZopeDocument:
 
         path = os.path.join(temp_dir, dir_name)
         if not os.path.exists(path):
-            os.mkdir(path, 0700)
+            os.mkdir(path, 0o700)
 
         content_file = os.path.join(path, content_file)
 
@@ -125,6 +123,7 @@ class ZopeDocument:
             line = in_f.readline()[:-1]
             if not line:
                 break
+            line = line.decode("utf8")
             key, val = line.split(":", 1)
             metadata[key] = val
 
@@ -163,14 +162,14 @@ class ZopeDocument:
         headers = {"Content-Type": self.metadata.get("content_type", "text/plain")}
 
         if self.lock_token is not None:
-            headers['If'] = '<%s> (<%s>)' % (self.path, self.lock_token)
+            headers["If"] = "<%s> (<%s>)" % (self.path, self.lock_token.decode("utf8"))
 
         response = self.zopeRequest("PUT", headers, body)
         del body  # Don't keep the body around longer then we need to
 
-        if response.status / 100 != 2:
+        if int(response.status / 100) != 2:
             # Something went wrong
-            message = response.read()
+            message = response.read().decode("utf8")
             NSLog(message)
             if NSRunAlertPanel(
                 message,
@@ -211,8 +210,8 @@ class ZopeDocument:
         if response.status / 100 == 2:
             # We got our lock, extract the lock token and return it
             reply = response.read()
-            token_start = reply.find('>opaquelocktoken:')
-            token_end = reply.find('<', token_start)
+            token_start = reply.find(b">opaquelocktoken:")
+            token_end = reply.find(b"<", token_start)
             if token_start > 0 and token_end > 0:
                 self.lock_token = reply[token_start + 1 : token_end]
                 self.did_lock = 1
@@ -280,6 +279,8 @@ class ZopeDocument:
                 h.putheader("Cookie", self.metadata["cookie"])
 
             h.endheaders()
+            if isinstance(body, str):
+                body = body.encode("utf8")
             h.send(body)
             return h.getresponse()
         except:
@@ -308,8 +309,9 @@ class ZopeDocument:
 
     def __del__(self):
         """Let's clean up after ourselves, shall we?"""
-        if self.lock_token:
-            self.unlock(interactive=0)
+        if self.lock_token is not None:
+            if self.lock_token:
+                self.unlock(interactive=0)
 
-        os.remove(self.getContentFile())
-        os.rmdir(os.path.dirname(self.getContentFile()))
+            os.remove(self.getContentFile())
+            os.rmdir(os.path.dirname(self.getContentFile()))

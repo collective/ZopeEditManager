@@ -6,7 +6,6 @@
 #  Copyright (c) 2004 Zope Foundation and Contributors.
 #
 
-# library imports
 from objc import YES, NO
 from PyObjCTools import AppHelper
 from Foundation import *  # noqa
@@ -36,7 +35,7 @@ class ZemAppDelegate(NSObject):
     sync_spinner = objc.IBOutlet()
     window = objc.IBOutlet()
 
-    def updateIfModified(self, timer):
+    def updateIfModified_(self, timer):
         timerUser = timer.userInfo()
         for doc in timerUser.current_edits_data:
             mtime = os.path.getmtime(doc.getContentFile())
@@ -264,7 +263,7 @@ class ZemAppDelegate(NSObject):
 
         timer = (
             NSTimer.scheduledTimerWithTimeInterval_target_selector_userInfo_repeats_(
-                interval, self, "updateIfModified", self, YES
+                interval, self, "updateIfModified:", self, YES
             )
         )
         NSRunLoop.currentRunLoop().addTimer_forMode_(timer, NSDefaultRunLoopMode)

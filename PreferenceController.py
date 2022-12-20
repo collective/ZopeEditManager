@@ -6,18 +6,11 @@
 #  Copyright (c) 2004 Zope Foundation and Contributors.
 #
 
-# library imports
-import os, re
+import os
 import objc
 from objc import YES, NO
-
-# import needed classes/functions from Foundation
-from Foundation import *
-
-# import Nib loading functionality from AppKit
-from AppKit import *
-
-# local product imports
+from Foundation import *  # noqa
+from AppKit import *  # noqa
 
 
 def comparable_version(version_string):
@@ -396,7 +389,6 @@ class PreferenceController(NSWindowController):
         )
 
     def init(self):
-
         self = self.initWithWindowNibName_("Preferences")
 
         self._edited_fields = []
@@ -419,7 +411,7 @@ class PreferenceController(NSWindowController):
         self.remove_disabled = NSImage.imageNamed_("remove_disabled")
 
         for x in range(len(self._helper_apps.keys())):
-            type = self._helper_apps.keys()[x]
+            type = [e for e in self._helper_apps.keys()][x]
             extension = self._helper_apps[type].get("extension", "")
             editor = self._helper_apps[type].get("editor", "")
             self._edited_fields.append(
