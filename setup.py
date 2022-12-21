@@ -1,7 +1,7 @@
 from setuptools import setup
 
 plist = dict(
-    CFBundleName="Zem",
+    CFBundleName="ZopeEditManager",
     CFBundleIdentifier="com.urbanape.zopeeditmanager",
     CFBundleShortVersionString="Version 1.0.0",
     CFBundleGetInfoString=(

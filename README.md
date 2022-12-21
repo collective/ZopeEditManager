@@ -1,6 +1,6 @@
-## Zem
+## ZopeEditManager
 
-Zem is an implementation of Casey Duncan's excellent External Editor
+ZopeEditManager is an implementation of Casey Duncan's excellent External Editor
 for Mac OS X, providing Mac users with flexibility in their choice of
 content-specific editors, and as many concurrent editors as they need
 running at the same time.
@@ -11,11 +11,11 @@ OS X application with an intuitive graphical user interface. This
 means that you can specify any Mac OS X application (Carbon or Cocoa)
 to act as the editor for a MIME type, type group, or Zope
 meta_type. And you can have as many concurrent edits as you like,
-since all edits are handled through Zem.
+since all edits are handled through ZopeEditManager.
 
 ### Installing It
 
-Drag the Zem application to the Applications folder in your
+Drag the ZopeEditManager application to the Applications folder in your
 hard drive or home directory. You can use the built-in preferences,
 one of the supplied preference files, or edit your own.
 
@@ -25,30 +25,30 @@ As you download links from the Zope Management Interface (ZMI) or the
 Content Management Framework (CMF) or Plone, new documents will
 accumulate in the main table.
 
-As saves are made in the editor, Zem will sync those changes back to
+As saves are made in the editor, ZopeEditManager will sync those changes back to
 the server, and display the time of the last sync. To remove a
-document from Zem, simply select it from the table, and click the
+document from ZopeEditManager, simply select it from the table, and click the
 'Finish' button, or press the 'delete' key.
 
 ### Configuring your Browser
 
-Currently, the only browser fully set to work with Zem is
+Currently, the only browser fully set to work with ZopeEditManager is
 Mozilla. Internet Explorer supports the configuration of File Helpers,
 but I've been unable to get it working quite right. In any case, other
 browsers will download a particular file. That file can be dragged
-onto the Zem icon and it will work fine. To enable Zem in Mozilla,
+onto the ZopeEditManager icon and it will work fine. To enable ZopeEditManager in Mozilla,
 select the Helper Applications pane from the Navigator group, and
-create a New Type called 'application/x-zope-edit', and choose Zem
+create a New Type called 'application/x-zope-edit', and choose ZopeEditManager
 with the Application picker.
 
 ### Configuration
 
-Zem provides a GUI Preferences panel. Just choose "Preferences..."
-from the Zem menu, or press Command-, to open the window.
+ZopeEditManager provides a GUI Preferences panel. Just choose "Preferences..."
+from the ZopeEditManager menu, or press Command-, to open the window.
 
 ### Options
 
-The available options for Zem are (names in parentheses are the
+The available options for ZopeEditManager are (names in parentheses are the
 corresponding key names in the Preferences plist):
 
 #### Files Prefs
@@ -65,7 +65,7 @@ Cleanup Files (cleanup_files)
 
 Confirm on Finish (confirm_on_finish)
 
-> When you are finished locally editing a file, Zem will ask you to
+> When you are finished locally editing a file, ZopeEditManager will ask you to
 > confirm this. You can disable this behavior by unchecking this
 > button.
 
@@ -137,7 +137,7 @@ endeavor:
 ### Conclusion
 
 I hope you enjoy using this software. If you have any comments,
-suggestions or would like to report a bug, send an email with 'Zem' in
+suggestions or would like to report a bug, send an email with 'ZopeEditManager' in
 the Subject line to the author:
 
 Zachery Bir &lt;zbir@urbanape.com&gt;
