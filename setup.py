@@ -3,14 +3,16 @@ from setuptools import setup
 plist = dict(
     CFBundleName="Zem",
     CFBundleIdentifier="com.urbanape.zopeeditmanager",
-    CFBundleShortVersionString="Version 0.9.9",
-    CFBundleGetInfoString=("Zem version 0.9.9, Copyright 2003-2006 Zope Foundation"),
+    CFBundleShortVersionString="Version 1.0.0",
+    CFBundleGetInfoString=(
+        "ZopeEditManager version 1.0.0, Copyright 2003-2006 Zope Foundation"
+    ),
     NSHumanReadableCopyright="Copyright 2003-2006 Zope Foundation",
     CFBundleIconFile="ZEM.icns",
     CFBundleInfoDictionaryVersion="6.0",
     CFBundlePackageType="APPL",
     CFBundleSignature="ZEDM",
-    CFBundleVersion="0.9.9",
+    CFBundleVersion="1.0.0",
     NSMainNibFile="MainMenu",
     NSPrincipalClass="NSApplication",
     CFBundleDevelopmentRegion="English",
