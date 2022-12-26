@@ -135,6 +135,20 @@
             <key>extension</key>
             <string>.pdf</string>
         </dict>
+        <key>application/vnd.oasis.opendocument.text</key>
+        <dict>
+            <key>editor</key>
+            <string>LibreOffice</string>
+            <key>extension</key>
+            <string>.odt</string>
+        </dict>
+        <key>applications/odt</key>
+        <dict>
+            <key>editor</key>
+            <string>LibreOffice</string>
+            <key>extension</key>
+            <string>.odt</string>
+        </dict>
     </dict>
     <key>save_interval</key>
     <real>2.0</real>
