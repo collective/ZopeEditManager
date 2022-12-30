@@ -149,6 +149,34 @@
             <key>extension</key>
             <string>.odt</string>
         </dict>
+        <key>application/vnd.oasis.opendocument.spreadsheet</key>
+        <dict>
+            <key>editor</key>
+            <string>LibreOffice</string>
+            <key>extension</key>
+            <string>.ods</string>
+        </dict>
+        <key>applications/ods</key>
+        <dict>
+            <key>editor</key>
+            <string>LibreOffice</string>
+            <key>extension</key>
+            <string>.ods</string>
+        </dict>
+        <key>application/vnd.oasis.opendocument.presentation</key>
+        <dict>
+            <key>editor</key>
+            <string>LibreOffice</string>
+            <key>extension</key>
+            <string>.odp</string>
+        </dict>
+        <key>applications/odp</key>
+        <dict>
+            <key>editor</key>
+            <string>LibreOffice</string>
+            <key>extension</key>
+            <string>.odp</string>
+        </dict>
     </dict>
     <key>save_interval</key>
     <real>2.0</real>
