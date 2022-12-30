@@ -134,6 +134,18 @@ endeavor:
     Crawford, Jean-Philippe Rey, Jim Allman, and Alan Runyan for using
     it and supplying valuable feedback
 
+### Compile application
+
+In order to compile the MacOS application you need to have a compiled python with all required librairies
+
+`env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.8.15`
+
+Compile app: `make build`
+
+Compile app for development : `make build-dev`
+
+Run application in development mode : `make debug`
+
 ### Conclusion
 
 I hope you enjoy using this software. If you have any comments,
