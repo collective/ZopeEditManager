@@ -209,11 +209,8 @@ class PreferenceController(NSWindowController):
     if MACOSX_VERSION == "panther":
 
         def tableView_sortDescriptorsDidChange_(self, aTableView, oldDescriptors):
-
-            array = NSArray.arrayWithArray_(self._edited_fields)
-            self._edited_fields = array.sortedArrayUsingDescriptors_(
-                aTableView.sortDescriptors()
-            )
+            array = NSMutableArray.arrayWithArray_(self._edited_fields)
+            array.sortUsingDescriptors_(aTableView.sortDescriptors())
             self.helper_apps.reloadData()
 
     def tableViewSelectionDidChange_(self, aNotification):
@@ -391,7 +388,7 @@ class PreferenceController(NSWindowController):
     def init(self):
         self = self.initWithWindowNibName_("Preferences")
 
-        self._edited_fields = []
+        self._edited_fields = NSMutableArray.arrayWithArray_([])
         self._toolbarItems = {}
         self._toolbarDefaultItemIdentifiers = []
 
